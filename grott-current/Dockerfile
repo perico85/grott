@@ -22,7 +22,7 @@ RUN pip3 install --no-cache --upgrade pip setuptools
 # Copy data for add-on
 COPY script.sh /app/script.sh
 WORKDIR /app
-RUN curl -Lk 'https://github.com/perico85/grottfork/archive/refs/heads/Beta-(2.8.x).zip' --output files.zip && unzip -o files.zip && rm files.zip && mv grott-*/*.py ./
+RUN curl -Lk 'https://github.com/perico85/grottfork/archive/refs/heads/Beta.zip' --output files.zip && unzip -o files.zip && rm files.zip && mv grott-*/*.py ./
 # Move the addon
 RUN curl -L 'https://raw.githubusercontent.com/perico85/grottfork/master/examples/Home%20Assistent/grott_ha.py' -o grott_ha.py
 
