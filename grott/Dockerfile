@@ -24,7 +24,7 @@ COPY script.sh /app/script.sh
 WORKDIR /app
 RUN curl -Lk 'https://github.com/johanmeijer/grott/archive/refs/heads/Old-master-(2.6.1h).zip' --output files.zip && unzip -o files.zip && rm files.zip && mv grott-*/*.py ./
 # Move the addon
-RUN mv grott-*/examples/Home\ Assistent/grott_ha.py ./
+RUN curl -L 'https://raw.githubusercontent.com/perico85/grottfork/master/examples/Home%20Assistent/grott_ha.py' -o grott_ha.py
 
 #Install required python packages 
 RUN pip install paho-mqtt requests influxdb influxdb
